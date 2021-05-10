@@ -11,7 +11,21 @@ import os
 PREFIX = 'https://www.zillow.com/homes/'
 
 print(os.path.dirname(os.path.realpath(__file__)))
-driver = webdriver.Chrome('resources/chromedriver')
+'''
+options = webdriver.ChromeOptions()
+options.add_argument("--no-sandbox")
+options.add_argument("--disable-dev-shm-usage")
+driver = webdriver.Chrome(chrome_options = options)
+driver.file_detector = UselessFileDetector()
+'''
+chrome_options = webdriver.ChromeOptions()
+chrome_options.add_argument("--start-maximized")
+#chrome_options.add_argument('--headless')
+chrome_options.add_argument('--no-sandbox')
+chrome_options.add_argument('--disable-dev-shm-usage')
+chrome_options.add_experimental_option("excludeSwitches", ["enable-automation"])
+chrome_options.add_experimental_option('useAutomationExtension', False)
+driver = webdriver.Chrome('chromedriver',chrome_options=chrome_options)
 
 #Get an address and return the Zillow url corresponding to this address
 def get_address(address):
@@ -26,8 +40,10 @@ def get_bd_ba_size(driver):
     #print(infos)
     bd = to_decimal(infos[0])
     ba = to_decimal(infos[1][2:])
-    size = int(infos[2][2:]+infos[3])
-    return bd, ba, size
+    size = infos[2][2:]+infos[3]
+    size = [c for c in size if c.isdigit()]
+    s= int(''.join(size))
+    return bd, ba, s
 
 #Return sold date if the appartment is sold, else None
 def get_sold_date(driver):
