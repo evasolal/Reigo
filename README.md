@@ -20,4 +20,4 @@ python API.py
 ```
 Then go to http://127.0.0.1:5000/ and enter your address.
 
-All the new entries will be saved in the database addresses.
+All the new entries will be saved in the database addresses.db
