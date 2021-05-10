@@ -3,10 +3,10 @@
 
 ## Requirements :
 
-selenium==3.141.0
-Flask==1.1.2
-numpy==1.18.5
-regex
+selenium==3.141.0\n
+Flask==1.1.2\n
+numpy==1.18.5\n
+regex\n
 sqlite3
 
 ## Running
