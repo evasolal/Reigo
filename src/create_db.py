@@ -36,8 +36,8 @@ def main():
     sql_create_address_table = """ CREATE TABLE IF NOT EXISTS address (
                                         id integer PRIMARY KEY,
                                         ADDRESS text NOT NULL,
-                                        BEDROOMS text,
-                                        BATHROOMS text,
+                                        BEDROOMS float,
+                                        BATHROOMS float,
                                         SIZE integer,
                                         SOLD_ON text,
                                         ZESTIMATE text,
