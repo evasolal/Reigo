@@ -1,0 +1,5 @@
+selenium==3.141.0
+Flask==1.1.2
+numpy==1.18.5
+re = 2.2.1
+sqlite3==2.6.0
