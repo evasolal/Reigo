@@ -77,7 +77,7 @@ def get_info(address):
 
     lst = []
     lst += get_bd_ba_size(driver)
-    lst + = [get_sold_date(driver), get_Zestimate(driver), get_walk_Score(driver), get_transit_Score(driver), get_GreateSchools(driver)]
+    lst += [get_sold_date(driver), get_Zestimate(driver), get_walk_Score(driver), get_transit_Score(driver), get_GreateSchools(driver)]
     '''
     lst.append(get_sold_date(driver))
     lst.append(get_Zestimate(driver))
